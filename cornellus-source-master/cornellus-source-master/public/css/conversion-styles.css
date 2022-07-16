@@ -1,0 +1,97 @@
+:root {
+    --clr-primary-200: #f3eed9;
+    --clr-primary-400: #F8485E;
+
+    --clr-neutral-100: #fff;
+    --clr-neutral-900: #222c2a;
+
+    --ff-primary: "Roboto", sans-serif;
+    --ff-accent: "Playfair Display", serif;
+
+    --keywordsbg: #8D2D54;
+}
+
+#conversion-page{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.conversion-header{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--clr-primary-400);
+    padding: 10px;
+    border-radius: 15px;
+    color: var(--clr-neutral-100);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top:60px;
+}
+
+.conversion-header h3:hover{
+    color: var(--clr-neutral-900);
+    cursor: pointer;
+}
+
+.is_selected{
+    color: var(--clr-neutral-900);
+}
+
+
+.conversion-header i{
+    font-size: 32px;
+}
+
+.conversion-header i:hover{
+    color: var(--clr-neutral-900);
+    cursor: pointer;
+}
+
+.conversion-panel{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.conversion-panel input{
+    width: 400px;
+    font-size: 20px;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+.conversion-panel select{
+    font-size: 20px;
+    padding: 4px;
+    margin-bottom: 10px;
+    width: 320px;
+}
+
+.conversion-panel label{
+    font-size: 20px;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+#conversion_btn{
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--clr-primary-400);
+    color: white;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+#conversion_btn:hover{
+    cursor: pointer;
+}

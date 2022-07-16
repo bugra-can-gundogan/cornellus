@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Cornellus - Online Study Hub</title>
+    <link rel="icon" href="/icon/favicon.ico">
+    <link rel="stylesheet" href="/css/l-r-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/footstyle.css">
+    <meta name="description" content="Cornellus is a free platform where everything about study comes together, designed for people who love taking notes, and for people who love using the 'Cornell Note Taking System' and Pomodoro!">
+    <meta name="keywords" content="Online Study, Online Studying, Study, Studying, Pomodoro, Cornell Note, Cornell Note Taking, Calculator, Scientific Calculator, Free Note Taking, Online Free Office">
+    <meta name="author" content="Buğra Gündoğan, Bugra Gundogan">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 id="web-site-name"><img src="/images/cornellusv1.png" alt="" onclick="window.location.href='/';"></h1>
+            <h3 class="header-option" onclick="window.location.href='/login';">SIGN IN</h3>
+        </header>
+
+        <div class="l-r-container">
+            <form method="POST" action="\register" id="form-rg" class="register-form">
+                <h2 class="login-register-h2" style="font-family: 'Shadows Into Light', cursive; font-size: 2rem;">Get started with CORNELLUS!</h2>
+                <div class="input-icons">
+                    <i class="fas fa-user iconr"></i>
+                    <input id="un-rg" type="text" placeholder="Username" name="username" minlength="6" maxlength="16"
+                        required>
+                </div>
+                <div class="input-icons">
+                    <i class="fas fa-at iconr"></i>
+                    <input id="em-rg" type="email" placeholder="E-mail" name="email_register" maxlength="32" required>
+                </div>
+                <div class="input-icons">
+                    <i class="fas fa-unlock-alt iconr"></i>
+                    <input id="pw-rg" type="password" placeholder="Password" name="password" minlength="8"
+                        maxlength="16" required>
+                </div>
+                <div class="input-icons">
+                    <i class="fas fa-unlock-alt iconr"></i>
+                    <input id="pws-rg" type="password" placeholder="Password" name="password_rg_2" minlength="8"
+                        maxlength="16" required>
+                </div>
+                <button class="hoverable-l-r-btn" type="submit" onclick="return checktheform()">Register</button>
+            </form>
+            <ul id="form-invalid-messages">
+
+            </ul>
+        </div>
+
+        <footer class="footer">
+            <div class="social-links">
+                <a class="emailtag" href = "mailto: bugra.gundogan@hotmail.com"><i class="fas fa-envelope-square"></i></a>
+            </div>
+            <p>Copyright &copy; 2021 Buğra Gündoğan</p>
+        </footer>
+    </div>
+
+    <script>
+        const form = document.getElementById("form-rg");
+        const username = document.getElementById("un-rg");
+        const email = document.getElementById("em-rg");
+        const password = document.getElementById("pw-rg");
+        const passwordsec = document.getElementById("pws-rg");
+        const uloferrors = document.getElementById("form-invalid-messages");
+        
+        function checktheform(){
+            const x = checkInputs();
+            if(x == 0){
+                alert("Welcome to Cornellus! We have sent you an e-mail. Please do not forget to verify your email address.");
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        function checkInputs(){
+            // get the values from the inputs
+            const childsoful = uloferrors.children;
+            for(let chi of childsoful){
+                chi.remove();
+            }
+
+            var errcount = 0;
+
+            const usernameValue = username.value.trim();
+            const emailValue = email.value.trim();
+            const passwordValue = password.value.trim();
+            const passowrd2Value = passwordsec.value.trim();
+
+            if(usernameValue === ''){
+                //show error
+                //add error class
+                setErrorFor(username, 'Username cannot be blank');
+                errcount++;
+            }else{
+                username.className="";
+            }
+            
+            if(emailValue === ''){
+                //show error
+                //add error class
+                setErrorFor(email, 'Email cannot be blank');
+                errcount++;
+            }else if(!isEmail(email.value)){
+                setErrorFor(email, 'Please enter a valid email.');
+                errcount++;
+            }else{
+                email.className = "";
+            }
+
+            if(passwordValue === ''){
+                setErrorFor(password, 'Password cannot be blank.');
+                errcount++;
+            }else{
+                password.className = "";
+            }
+
+            if(passowrd2Value === ''){
+                setErrorFor(passwordsec, 'Password cannot be blank.');
+                errcount++;
+            }else if(passwordValue !== passowrd2Value){
+                setErrorFor(passwordsec, 'Passwords do not match.');
+                errcount++;
+            }else{
+                passwordsec.className = "";
+            }
+
+            return errcount;
+        }
+
+        function setErrorFor(input,message){
+            const formControl = input.parentElement;
+            const newlistitem = document.createElement("li");
+            var icon = document.createElement("i");
+            icon.className ="fas fa-times-circle";
+            icon.color = "#FF4848"
+            message = " " + message;
+            newlistitem.append(icon);
+            const newmessage = document.createTextNode(message);
+            newlistitem.append(newmessage);
+            uloferrors.append(newlistitem);
+            input.className = "invalid";
+        }
+
+        function isEmail(email){
+            return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+        }
+         
+
+    </script>
+</body>
+
+</html>

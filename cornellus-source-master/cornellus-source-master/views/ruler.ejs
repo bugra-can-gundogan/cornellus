@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ruler-styles.css">
+    <title>Cornellus - Calculator</title>
+    <link rel="icon" href="/icon/favicon.ico">
+    <link rel="stylesheet" href="css/footstyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <h1 id="web-site-name"><img src="images/cornellusv1.png" width="200px" alt=""
+                    onclick="window.location.href='/';">
+            </h1>
+            <div class="nav-buttons">
+                <% if(loggedin){ %>
+
+                    <h3><i class="fas fa-sticky-note hoverable-logout" onclick="window.location.href='/userhome';"
+                            data-tooltip="My Notes"></i>
+                        <p class="tooltip">My Notes</p>
+                    </h3>
+                    <h3><i class="fas fa-door-open hoverable-logout" onclick="window.location.href='/logout';"
+                            data-tooltip="Log out"></i>
+                        <p class="tooltip">Log out</p>
+                    </h3>
+                    <%}else{%>
+                        <h3 class="reglogheader" onclick="window.location.href='/register';">SIGN UP</h3>
+                        <h3 class="reglogheader" onclick="window.location.href='/login';">SIGN IN</h3>
+                        <% } %>
+            </div>
+        </nav>
+        <main>
+            <div class="rulers">
+                <ul class="ruler">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+                <ul class="ruler" data-items="10"></ul>
+                <ul class="ruler" data-items="20"></ul>
+            </div>
+
+            <div class="optionofruler">
+                <label for="spacing">Spacing:</label>
+                <select id="spacing">
+                    <option>1cm</option>
+                    <option>2cm</option>
+                    <option>1in</option>
+                    <option>1em</option>
+                    <option>20px</option>
+                </select>
+            </div>
+        </main>
+        <footer>
+            <div class="social-links">
+                <a class="emailtag" href = "mailto: bugra.gundogan@hotmail.com"><i class="fas fa-envelope-square"></i></a>
+            </div>
+            <p class="copy-right-shit">Copyright &copy; 2021 Buğra Gündoğan</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        var navbuttons = document.getElementsByClassName("hoverable-logout");
+
+        for (let index = 0; index < navbuttons.length; index++) {
+            const element = navbuttons[index];
+            element.addEventListener('mouseenter', e => {
+                element.parentElement.lastElementChild.style.display = "block";
+            });
+            element.addEventListener('mouseleave', e => {
+                element.parentElement.lastElementChild.style.display = "none";
+            })
+        }
+
+        $(function () {
+            // Build "dynamic" rulers by adding items
+            $(".ruler[data-items]").each(function () {
+                var ruler = $(this).empty(),
+                    len = Number(ruler.attr("data-items")) || 0,
+                    item = $(document.createElement("li")),
+                    i;
+                for (i = 0; i < len; i++) {
+                    ruler.append(item.clone().text(i + 1));
+                }
+            });
+            // Change the spacing programatically
+            function changeRulerSpacing(spacing) {
+                $(".ruler").
+                    css("padding-right", spacing).
+                    find("li").
+                    css("padding-left", spacing);
+            }
+            $("#spacing").change(function () {
+                changeRulerSpacing($(this).val());
+            });
+        });
+    </script>
+</body>
+
+</html>

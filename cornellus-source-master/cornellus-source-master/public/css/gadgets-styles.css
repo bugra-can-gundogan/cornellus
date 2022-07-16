@@ -1,0 +1,245 @@
+:root {
+    --clr-primary-200: #f3eed9;
+    --clr-primary-400: #F8485E;
+  
+    --clr-neutral-100: #fff;
+    --clr-neutral-900: #222c2a;
+  
+    --ff-primary: "Roboto", sans-serif;
+    --ff-accent: "Playfair Display", serif;
+  
+    --keywordsbg: #8D2D54;
+  }
+  
+  html{
+      min-height: 1000px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  body{
+    background: linear-gradient(-45deg, #512D6D, #F8485E, #628395, #0A1931); /*#F8485E */
+    background-size: 400% 400%;
+    animation: bgchange 10s ease-in-out infinite;
+    margin:0;
+    padding:0;  
+  }
+  
+  @keyframes bgchange{
+    0%{
+        background-position: 0 50%;
+    }50%{
+        background-position: 100% 50%;
+    }100%{
+        background-position: 0 50%;
+    }
+  }
+  
+  .container{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 100vh;
+      justify-content: flex-start;
+      align-items: center;
+  }
+  
+  .hoverable-logout:hover{
+    cursor: pointer;
+    color: #4B778D;
+    color: black;
+  }
+
+  .social-links i:hover{
+    cursor: pointer;
+    color: #C2FFD9;
+  }
+
+  main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 200px;
+    margin-top: 140px;
+    min-height: 800px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  }
+  
+  #web-site-name{
+      padding-left:20px;
+  }
+
+  .nav-buttons{
+    justify-self:flex-end;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    margin-left: auto;
+  }
+  
+  .nav-buttons i{
+    font-size:50px; 
+    padding-right:50px;
+    color: var(--clr-primary-400)
+  }
+
+  footer{
+    margin-top: auto;
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color: black;
+    color: white;
+    padding-top:10px;
+    width:100%;
+}
+
+.social-links{
+  display: flex;
+  width: 50%;
+  justify-content:center;
+  align-items:center;
+  font-size: 50px;
+}
+
+.social-links i{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+#web-site-name:hover{
+  cursor: pointer;
+}
+
+.social-links i:hover{
+  cursor: pointer;
+}
+
+.nav-buttons i:hover{
+  cursor: pointer;
+}
+
+.nav-buttons h3{
+  position: relative;
+}
+
+.tooltip{
+    position: absolute;
+    top:80px;
+    background-color: white;
+    color: black;
+    display: none;
+    border-radius: 8px;
+    padding:5px;
+    left: -10px;
+  }
+
+.gadgets-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-neutral-100);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 12px;
+}
+
+.gadgets-container h1{
+    align-self: flex-start;
+    margin-right: auto;
+    color: var(--clr-primary-400);
+}
+
+.gadget-holder{
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 300px 300px 300px; 
+    grid-gap: 10px;
+    min-height: 300px;
+    padding: 40px;
+    padding-top: 60px;
+    align-content: start;
+    justify-items:center;
+    flex-grow: 1;
+}
+
+.gadget-sample{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    background-color: #E63E6D;
+}
+
+.gadget-sample:hover{
+    cursor: pointer;
+    background-color: #151515;
+    transition: ease-in-out 500ms;
+}
+
+.gadget-icon{
+    font-size: 50px;
+    color: var(--clr-neutral-100);
+    justify-self: center;
+    margin-top: auto;
+}
+
+.gadget-sample h4{
+    font-size: 28px;
+    color: var(--clr-neutral-100);
+    justify-self: flex-end;
+    margin-top: auto;
+}
+
+
+@media screen and (min-width:650px) and (max-width:1100px){ 
+    .gadgets-container h1{
+        align-self: center;
+        margin-right:unset;
+    }
+    .gadget-holder{
+        grid-template-columns: 200px 200px 200px;
+    }
+}
+
+@media screen and (max-width:649px){
+    
+    .gadgets-container{
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 20px;
+    }
+    
+    .gadgets-container h1{
+        align-self: center;
+        margin-right:unset;
+    }
+    .gadget-holder{
+        grid-template-columns: 300px;
+        padding:0px;
+    }
+
+    #web-site-name img{
+        width: 150px;
+    }
+    
+    .nav-buttons i{
+        font-size: 32px;
+        padding-right: 15px;
+    }
+}

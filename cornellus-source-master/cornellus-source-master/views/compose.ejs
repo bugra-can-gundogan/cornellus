@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"
+        integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"
+        integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"
+        integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Zilla+Slab:wght@500&display=swap"
+        rel="stylesheet" />
+    <title>Cornellus</title>
+    <link rel="stylesheet" href="css/compose-styles.css">
+    <link rel="stylesheet" href="css/wiki-styles.css">
+    <link rel="stylesheet" href="css/conversion-styles.css">
+    <link rel="icon" href="/icon/favicon.ico">
+    <link rel="stylesheet" href="css/footstyle.css">
+    <meta name="description" content="Cornellus is a free platform where everything about study comes together, designed for people who love taking notes, and for people who love using the 'Cornell Note Taking System' and Pomodoro!">
+    <meta name="keywords" content="Online Study, Online Studying, Study, Studying, Pomodoro, Cornell Note, Cornell Note Taking, Calculator, Scientific Calculator, Free Note Taking, Online Free Office">
+    <meta name="author" content="Buğra Gündoğan, Bugra Gundogan">
+</head>
+
+<body>
+    <div style="display: flex;" id="main-page" class="container">
+        <header>
+            <h1 id="web-site-name"><img src="images/cornellusv1.png" alt="" onclick="window.location.href='/';"></h1>
+            <% if(loggedin){%>
+                <h3 class="header-option" onclick="window.location.href='/userhome';">MY NOTES</h3>
+                <h3 class="header-option" onclick="window.location.href='/logout';">LOG OUT</h3>
+                <%}else{%>
+                    <h3 class="header-option" onclick="window.location.href='/login';">SIGN IN</h3>
+                    <h3 class="header-option" onclick="window.location.href='/register';">SIGN UP</h3>
+                    <% }%>
+        </header>
+        <section id="tools" class="tools">
+            <div onclick="window.open('/pomodoro')" class="tool">
+                <i class="fas fa-school"></i>
+                <h4>Pomodoro</h4>
+            </div>
+            <div onclick="window.open('/calculator')" class="tool">
+                <i class="fas fa-calculator"></i>
+                <h4>Calculator</h4>
+            </div>
+            <div onclick="wikiSearch()" class="tool">
+                <i class="fab fa-wikipedia-w"></i>
+                <h4>Wiki Search</h4>
+            </div>
+            <div onclick="window.open('/ruler')" class="tool">
+                <i class="fas fa-ruler"></i>
+                <h4>Screen Ruler</h4>
+            </div>
+        </section>
+        <section class="post-container">
+            <div class="post-keywords" id="keywords">
+                <form action="">
+                    <div id="add-kw-form">
+                        <input type="text" id="new-keyword" placeholder="New Keyword" maxlength="24" required>
+                        <button type="button" onclick="addKeywordFunction()" id="add-keyword">+</button>
+                    </div>
+                </form>
+                <div id="kw-container" class="keywords-container">
+                </div>
+            </div>
+            <div class="post-content">
+                <input id="post-title" type="text" placeholder="Title here...">
+                <div class="quill-wrap">
+                    <!-- Create the toolbar container -->
+                    <div id="toolbar">
+                        <span class="ql-formats">
+                            <select class="ql-header">
+                                <option value="1">Heading</option>
+                                <option value="2">Subheading</option>
+                                <option selected>Normal</option>
+                            </select>
+                            <select class="ql-font">
+                                <option selected>Sans Serif</option>
+                                <option value="serif">Serif</option>
+                                <option value="monospace">Monospace</option>
+                            </select>
+                        </span>
+                        <span class="ql-formats">
+                            <button class="ql-bold"></button>
+                            <button class="ql-italic"></button>
+                            <button class="ql-underline"></button>
+                            <button class="ql-strike"></button>
+                        </span>
+                        <span class="ql-formats">
+                            <select class="ql-color"></select>
+                            <select class="ql-background"></select>
+                        </span>
+                        <span class="ql-formats">
+                            <button class="ql-list" value="ordered"></button>
+                            <button class="ql-list" value="bullet"></button>
+                            <select class="ql-align">
+                                <option selected></option>
+                                <option value="center"></option>
+                                <option value="right"></option>
+                                <option value="justify"></option>
+                            </select>
+                        </span>
+                        <span class="ql-formats">
+                            <button class="ql-blockquote"></button>
+                            <button class="ql-link"></button>
+                            <button class="ql-image"></button>
+                            <button class="ql-code-block"></button>
+                            <button class="ql-formula"></button>
+                        </span>
+                        <span class="ql-formats">
+                            <button class="ql-clean"></button>
+                        </span>
+                    </div>
+                    <!-- Create the editor container -->
+                    <div id="editor"></div>
+                </div>
+            </div>
+        </section>
+        <div id="post-summary">
+            <textarea name="" id="summary-text-ar" placeholder="Summary..."></textarea>
+        </div>
+        <div id="submit-holder">
+            <% if(loggedin){%>
+                <button type="button" onclick="savenote()" class="bn54">
+                    <span class="bn54span">Save</span>
+                </button>
+                <%}else{%>
+                    <button type="button" class="bn54">
+                        <span class="bn54span">Login to save</span>
+                    </button>
+                    <%}%>
+                        <button style="display:none; margin-left:10px; min-width: 200px;" type="button"
+                            class="bn54">
+                            <span class="bn54span">Download as PDF</span>
+                        </button>
+        </div>
+        <footer class="footer">
+            <div class="social-links">
+                <a class="emailtag" href = "mailto: bugra.gundogan@hotmail.com"><i class="fas fa-envelope-square"></i></a>
+            </div>
+            <p>Copyright &copy; 2021 Buğra Gündoğan</p>
+        </footer>
+    </div>
+    <div id="wiki-page" style="display:none;">
+        <div class="wiki-header">
+            <i class="fab fa-wikipedia-w"></i>
+            <div class="header__search-bar">
+                <input id="input" aria-label="Example: Honey, Cars, Nikola Tesla" type="text" class="search-bar__input"
+                    placeholder="Example: Honey, Cars, Nikola Tesla" autofocus required />
+                <button id="submit" type="button" class="search-bar__button" aria-label="search">
+                    <!-- inline SVG search icon -->
+                    <svg version="1.1" id="Layer_1" x="0px" y="0px" width="15px" height="15px" viewBox="0 0 25 25"
+                        enable-background="new 0 0 25 25" xml:space="preserve">
+                        <path fill="#C0C0C0"
+                            d="M23.888,21.266l-5.629-5.628c1.1-1.604,1.742-3.545,1.742-5.637C20.001,4.478,15.526,0,10,0
+                        C4.478,0,0,4.478,0,10.001S4.478,20,10,20c2.204,0,4.233-0.721,5.885-1.927l5.598,5.597c0.717,0.718,1.838,0.761,2.5,0.097
+                        C24.647,23.104,24.604,21.983,23.888,21.266z M10,16.748c-3.728,0-6.749-3.021-6.749-6.747c0-3.728,3.021-6.749,6.749-6.749c3.729,0,6.749,3.021,6.749,6.749C16.749,13.728,13.729,16.748,10,16.748z" />
+                    </svg>
+                </button>
+            </div>
+            <i onclick="backtocompose()" id="backarrow" class="fas fa-long-arrow-alt-left"></i>
+        </div>
+        <div class="results">
+            <p id="error" class="results__error"></p>
+            <div id="results" class="results__items"></div>
+        </div>
+    </div>
+    <div id="conversion-page" style="display:none;">
+        <div class="conversion-header">
+            <h3 onclick="conversiontab('length')">Length</h3>
+            <h3 onclick="conversiontab('weight')">Weight</h3>
+            <h3 onclick="conversiontab('temp')">Temperature</h3>
+            <h3 onclick="conversiontab('area')">Area</h3>
+            <h3 onclick="conversiontab('volume')">Volume</h3>
+            <i onclick="backtocompose()" id="" class="fas fa-long-arrow-alt-left"></i>
+        </div>
+        <div class="conversion-panel">
+            <input placeholder="Enter the number here..." type="number" name="" id="">
+            <div class="conversionhub">
+                <div class="convert-from">
+                    <label for="">From: </label>
+                    <select name="" id="select-from">
+                        <option value="">Meter</option>
+                    </select>
+                </div>
+                <div class="convert-to">
+                    <label for="">To: &nbsp; &nbsp; </label>
+                    <select name="" id="select-to">
+                        <option value="">Kilometer</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="conversion_btn" onclick="convertlast()">Convert</button>
+            <h2 id="conversion-result"></h2>
+        </div>
+
+    </div>
+    <form style="display:none;" onsubmit="return formSubmit(this);" id="forme-invisible" action="/compose"
+        method="post">
+        <input id="invisible-kws" type="text" name="keywords" value="">
+        <input id="invisible-noteplace" type="text" name="notes" value="">
+        <input id="invisible-title" type="text" name="title" value="">
+        <input id="invisible-summary" type="text" name="summary" value="">
+        <input type="submit" name="submitbuttt" id="lastsubmit" value="">
+    </form>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        var editor = new Quill('#editor', {
+            modules: { toolbar: '#toolbar' },
+            theme: 'snow'
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="compose.js"></script>
+    <script src="wiki.js"></script>
+</body>
+
+</html>

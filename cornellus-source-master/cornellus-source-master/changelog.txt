@@ -1,0 +1,7 @@
+v0.1 14.08.2021:
+
+Launched Cornellus.com where you can just take a note with a simple text editor, save it, read it later or edit it.
+
+v1.0 28.09.2021:
+
+Updated cornellus.com with many features including redesign of some crucial parts of UI, adding new tools to enhance the experience and a lot more.

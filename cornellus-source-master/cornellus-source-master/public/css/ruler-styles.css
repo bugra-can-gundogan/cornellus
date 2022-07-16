@@ -1,0 +1,281 @@
+:root {
+    --clr-primary-200: #f3eed9;
+    --clr-primary-400: #F8485E;
+  
+    --clr-neutral-100: #fff;
+    --clr-neutral-900: #222c2a;
+  
+    --ff-primary: "Roboto", sans-serif;
+    --ff-accent: "Playfair Display", serif;
+  
+    --keywordsbg: #8D2D54;
+  }
+  
+  html{
+      min-height: 1000px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  body{
+    background: linear-gradient(-45deg, #512D6D, #F8485E, #628395, #0A1931); /*#F8485E */
+    background-size: 400% 400%;
+    animation: bgchange 10s ease-in-out infinite;
+    margin:0;
+    padding:0;  
+  }
+  
+  @keyframes bgchange{
+    0%{
+        background-position: 0 50%;
+    }50%{
+        background-position: 100% 50%;
+    }100%{
+        background-position: 0 50%;
+    }
+  }
+  
+  .container{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 100vh;
+      justify-content: flex-start;
+      align-items: center;
+  }
+  
+  .hoverable-logout:hover{
+    cursor: pointer;
+    color: #4B778D;
+    color: black;
+  }
+
+  .social-links i:hover{
+    cursor: pointer;
+    color: #C2FFD9;
+  }
+
+  main{
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+    margin-top: 100px;
+    min-height: 800px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--clr-neutral-900);
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  }
+  
+  #web-site-name{
+      padding-left:20px;
+  }
+
+  .nav-buttons{
+    justify-self:flex-end;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    margin-left: auto;
+  }
+  
+  .nav-buttons i{
+    font-size:50px; 
+    padding-right:50px;
+    color: var(--clr-primary-400)
+  }
+
+  .nav-buttons h3{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+
+  .reglogheader{
+    padding-right:30px;
+    font-size: 24px;
+    color:var(--clr-primary-400);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin:10px 0;
+  }
+
+  .reglogheader:hover{
+    color: black;
+    cursor: pointer;
+  }
+
+
+  footer{
+    margin-top: auto;
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color: black;
+    color: white;
+    padding-top:10px;
+    width:100%;
+}
+
+.social-links{
+  display: flex;
+  width: 50%;
+  justify-content:center;
+  align-items:center;
+  font-size: 50px;
+}
+
+.social-links i{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+#web-site-name:hover{
+  cursor: pointer;
+}
+
+.social-links i:hover{
+  cursor: pointer;
+}
+
+.nav-buttons i:hover{
+  cursor: pointer;
+}
+
+.nav-buttons h3{
+  position: relative;
+}
+
+.tooltip{
+    position: absolute;
+    top:80px;
+    background-color: white;
+    color: black;
+    display: none;
+    border-radius: 8px;
+    padding:5px;
+    left: -15px; 
+    width: max-content; 
+}
+
+.ruler, .ruler li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+}
+/* IE6-7 Fix */
+.ruler, .ruler li {
+    *display: inline;
+}
+.ruler {
+    background: var(--clr-neutral-100);
+    box-shadow: 0 -1px 1em hsl(60, 60%, 84%) inset;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    margin: 60px 0;
+    height: 7em;
+    padding-right: 1cm;
+    white-space: nowrap;
+}
+.ruler li {
+    padding-left: 1cm;
+    width: 2em;
+    margin: .64em -1em -.64em;
+    text-align: center;
+    position: relative;
+    text-shadow: 1px 1px hsl(60, 10%, 58%);
+    color: var(--clr-primary-400);
+}
+.ruler li:before {
+    content: '';
+    position: absolute;
+    border-left: 1px solid #ccc;
+    height: .64em;
+    top: -.64em;
+    right: 1em;
+}
+
+.rulers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.optionofruler{
+    font-size:32px;
+    display: flex;
+    width: 220px;
+    justify-content: space-between;
+    color: var(--clr-neutral-100);
+}
+
+.optionofruler select{
+    font-size: 24px;
+}
+
+@media screen and (min-width: 550px) and (max-width:649px){
+
+    #web-site-name img{
+        width: 150px;
+    }
+
+    .row button{
+        height: 30px;
+        width: 30px;
+        font-size: 1em;
+    }
+
+    main{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:549px){
+
+    #web-site-name img{
+        width: 150px;
+    }
+
+    .scientific-text{
+        font-size: 0.8em;
+    }
+
+    .row button{
+        height: 40px;
+        width: 40px;
+        font-size: 1.2em;
+    }
+    
+    #copy{
+        font-size: 0.8em !important;
+    }
+
+    .calc-container{
+        width: 310px;
+    }
+    .nav-buttons i{
+        font-size: 32px;
+        padding-right: 15px;
+    }
+
+    main{
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+}

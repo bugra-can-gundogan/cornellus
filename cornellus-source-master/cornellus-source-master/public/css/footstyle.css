@@ -1,0 +1,9 @@
+.emailtag{
+    text-decoration: none;
+    color: unset;
+}
+
+.emailtag:visited{
+    text-decoration: none;
+    color: unset;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornellus-Online Study Hub</title>
+    <link rel="stylesheet" href="css/study-hub-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glory:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="icon" href="/icon/favicon.ico">
+    <link rel="stylesheet" href="css/footstyle.css">
+    <meta name="description" content="Cornellus is a free platform where everything about study comes together, designed for people who love taking notes, and for people who love using the 'Cornell Note Taking System' and Pomodoro!">
+    <meta name="keywords" content="Online Study, Online Studying, Study, Studying, Pomodoro, Cornell Note, Cornell Note Taking, Calculator, Scientific Calculator, Free Note Taking, Online Free Office">
+    <meta name="author" content="Buğra Gündoğan, Bugra Gundogan">
+</head>
+
+<body>
+    <header>
+        <h1 id="web-site-name"><img src="images/cornellusv1.png" alt="" onclick="window.location.href='/';"></h1>
+        <div class="nav-options">
+            <h3 onclick="window.location.href='/compose';">TAKE A NOTE</h3>
+            <h3 onclick="window.location.href='/pomodoro';">POMODORO</h3>
+            <h3 onclick="window.location.href='/calculator';">CALCULATOR</h3>
+            <div class="signs">
+                <h3 onclick="window.location.href='/login';">SIGN IN</h3>
+                <h3 onclick="window.location.href='/register';">SIGN UP</h3>
+            </div>
+        </div>
+        <i id="dropnavbar" class="fas fa-bars" onclick="opendrop()"></i>
+        <div id="pomerenia" class="secretnavbar">
+            <h3 onclick="window.location.href='/compose';">TAKE A NOTE</h3>
+            <h3 onclick="window.location.href='/pomodoro';">POMODORO</h3>
+            <h3 onclick="window.location.href='/calculator';">CALCULATOR</h3>
+            <h3 onclick="window.location.href='/login';">SIGN IN</h3>
+            <h3 onclick="window.location.href='/register';">SIGN UP</h3>
+        </div>
+    </header>
+    <section class="first-sect">
+        <div class="first-sect-elems">
+            <h1>CORNELLUS</h1>
+            <h2>ONLINE STUDY HUB</h2>
+            <p>A free platform where everything about study comes together...</p>
+        </div>
+    </section>
+    <section class="even-sect">
+        <img src="images/takenot.png" alt="Cornell Style Notes">
+        <div class="explanation">
+            <h3>Cornell Notes</h3>
+            <p>Take your notes in accordance to <b>"Cornell Note Taking Method"</b>. It is a very effective system to
+                take organized notes and it renders your notes a lot more easy to review and study later.</p>
+            <p>You should add keywords and a summary to your note to utilize this method however in Cornellus it is
+                completely up to you to choose how you want to take your notes.</p>
+            <p>Your notes are not shared with anyone, and is not visible by any other user.</p>    
+        </div>
+    </section>
+    <section class="odd-sect">
+        <img src="images/calc.png" alt="Scientific Calculator">
+        <div class="explanation">
+            <h3>Limitless Calculator</h3>
+            <p>A scientific calculator to help you in your mathematics studies and daily calculations. The calculator
+                can handle basic operations and scientific advanced operations.</p>
+            <p>If you can think of anything that would be a good feature to add to the calculator, feel free to contact
+                us.</p>
+        </div>
+    </section>
+    <section class="even-sect">
+        <img src="images/pomo.png" alt="Pomodoro">
+        <div class="explanation">
+            <h3>Pomodoro App</h3>
+            <p>Ever heard of <b>Pomodoro</b>? Pomodoro is a method of studying focused on increasing your effectiveness
+                and discipline through long studies. Here is how it goes: </p>
+            <p>You study for 25 minutes and then take a 5 minute break. After the fourth study session you should rest
+                for 30 minutes. Cornellus gives you the option to start a fully automated session or control your breaks
+                and study sessions.</p>
+        </div>
+
+    </section>
+    <footer>
+        <div class="social-links">
+            <a class="emailtag" href = "mailto: bugra.gundogan@hotmail.com"><i class="fas fa-envelope-square"></i></a>
+        </div>
+        <p class="copy-right-shit">Copyright &copy; 2021 Buğra Gündoğan</p>
+    </footer>
+    <script>
+        function opendrop() {
+            var elem = document.getElementById("pomerenia");
+            if(elem.style.display == "flex"){
+                elem.style.display = "none";
+            }else{
+                elem.style.display = "flex";
+            }
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.matches('#dropnavbar')) {
+                var elem = document.getElementById("pomerenia");
+                elem.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

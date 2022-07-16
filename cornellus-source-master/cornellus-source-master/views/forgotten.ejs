@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <title>Cornellus</title>
+    <link rel="stylesheet" href="/css/l-r-styles.css">
+    <link rel="icon" href="/icon/favicon.ico">
+    <link rel="stylesheet" href="css/footstyle.css">
+    <meta name="description" content="Cornellus is a free platform where everything about study comes together, designed for people who love taking notes, and for people who love using the 'Cornell Note Taking System' and Pomodoro!">
+    <meta name="keywords" content="Online Study, Online Studying, Study, Studying, Pomodoro, Cornell Note, Cornell Note Taking, Calculator, Scientific Calculator, Free Note Taking, Online Free Office, Pomodoro">
+    <meta name="author" content="Buğra Gündoğan, Bugra Gundogan">
+</head>
+<body>
+    <div class="container">
+            <header>
+                <h1 id="web-site-name"><img src="/images/cornellusv1.png" alt="" onclick="window.location.href='/';"></h1>
+                <h3 class="header-option" onclick="window.location.href='/login';">SIGN IN</h3>
+                <h3 class="header-option" onclick="window.location.href='/register';">SIGN UP</h3>
+            </header>
+            <div class="l-r-container">
+                <form action="/forgot" method="POST" class="login-form">
+                    <h2>Enter your email below to reset your password:</h2>
+                    <div class="input-icons">
+                        <i class="fas fa-at iconr"></i>
+                        <input id="em-rg" type="email" placeholder="abc@xyz.com" name="email_forgot" maxlength="32" required>
+                    </div>
+                    <button class="hoverable-f-r-btn" type="submit">Send</button>
+                </form>
+                <div class="errors-of-login">
+                    <% for(let i=0; i<errors.length; i++){ %>
+                        <p><i style="color:#FF4848" class="fas fa-times-circle"></i> <%=errors[i]%>.</p>
+                    <% } %>
+                </div>
+            </div>
+    
+        <footer class="footer">
+            <div class="social-links">
+                <a class="emailtag" href = "mailto: bugra.gundogan@hotmail.com"><i class="fas fa-envelope-square"></i></a>
+            </div>
+            <p>Copyright &copy; 2021 Buğra Gündoğan</p>
+        </footer>
+    </div>
+</body>
+</html>

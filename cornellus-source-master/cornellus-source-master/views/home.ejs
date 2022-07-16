@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="icon" href="/icon/favicon.ico">
+    <link rel="stylesheet" href="css/footstyle.css">
+    <title>Cornellus - Take A Note</title>
+    <meta name="description" content="Cornellus is a free platform where everything about study comes together, designed for people who love taking notes, and for people who love using the 'Cornell Note Taking System' and Pomodoro!">
+    <meta name="keywords" content="Online Study, Online Studying, Study, Studying, Pomodoro, Cornell Note, Cornell Note Taking, Calculator, Scientific Calculator, Free Note Taking, Online Free Office, Pomodoro">
+    <meta name="author" content="Buğra Gündoğan, Bugra Gundogan">
+</head>
+<body>
+    <div class="container">
+        <div class="second-container">
+            <div class="main-content">
+                <div class="logo-signup">
+                    <img id="logo" src="images/cornellusv1.png" alt="Cornellus">
+                    <% if(alreadyLogged){ %>
+                        <div class="login-register">
+                            <h3 class="hoverable-home-btn" onclick="window.location.href='/userhome';"><i class="fas fa-house-user"></i>&nbsp; my notes</h3>
+                            <h3 class="hoverable-home-btn" onclick="window.location.href='/logout';"><i class="fas fa-sign-out-alt"></i>&nbsp; &nbsp;log out</h3>
+                        </div>
+                    <%}else{%>
+                        <div class="login-register">
+                            <h3 class="hoverable-home-btn" onclick="window.location.href='/login';"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; Log in</h3>
+                            <h3 class="hoverable-home-btn" onclick="window.location.href='/register';"><i class="fas fa-user-plus"></i>&nbsp; &nbsp;Register</h3>
+                        </div>
+                    <% }%>        
+                </div>
+                <div class="specs-explanation">
+                    <div class="lil-navbar"><h3  onclick="window.location.href='/pomodoro';">POMODORO APP</h3><h3  onclick="window.location.href='/compose';">TAKE A NOTE</h3><h3  onclick="window.location.href='/calculator';">SCIENTIFIC CALCULATOR</h3></div>
+                    <div class="spec">
+                        <h4>What is Cornellus?</h4> <br>
+                        <p>Cornellus is a free platform where everything about study comes together, designed for people who love taking notes, and for people who love using the 'Cornell Note Taking System' and Pomodoro!</p>
+                    </div>
+                    <div class="spec">
+                        <h4>How can I use it?</h4> <br>
+                        <p>You can sign up from left or click one of the links above to start using the application. Please note that you need to <b>sing up</b> to save the notes you have taken.</p>
+                    </div>
+                    <div class="spec">
+                        <h4>How much?</h4> <br>
+                        <p>Cornellus is completely free.</p>
+                    </div> <br>
+                    <h4 class="cornellus-about" onclick="window.location.href='/about';"><i class="far fa-question-circle"></i>&nbsp; To learn more about Cornellus please click here.</h4>
+                </div>
+            </div>
+            <img id="long-banner" src="images/long.jpg" alt="Online Studying, Cornell Style">
+        </div>
+        
+        <footer>
+            <div class="social-links">
+                <a class="emailtag" href = "mailto: bugra.gundogan@hotmail.com"><i class="fas fa-envelope-square"></i></a>
+            </div>
+              <p class="copy-right-shit">Copyright &copy; 2021 Buğra Gündoğan</p>
+        </footer>
+    </div>
+</body>
+</html>

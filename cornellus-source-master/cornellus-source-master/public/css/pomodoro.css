@@ -1,0 +1,619 @@
+:root {
+    --clr-primary-200: #f3eed9;
+    --clr-primary-400: #F8485E;
+  
+    --clr-neutral-100: #fff;
+    --clr-neutral-900: #222c2a;
+  
+    --ff-primary: "Roboto", sans-serif;
+    --ff-accent: "Playfair Display", serif;
+  
+    --keywordsbg: #8D2D54;
+
+    --pomo-primary-100: #424242;
+    --pomo-primary-200: #F05361;
+    --pomo-neutral-100: #F1F1F1;
+  }
+  
+  html{
+      min-height: 1000px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  body{
+    background: linear-gradient(-45deg, #7E8A97, #082032, #252525, #30475E); /*#F8485E */
+    background-size: 400% 400%;
+    animation: bgchange 10s ease-in-out infinite;
+    margin:0;
+    padding:0;  
+  }
+
+  
+  .container{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 100vh;
+      justify-content: flex-start;
+      align-items: center;
+  }
+
+  .second-container{
+    display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 100vh;
+      justify-content: flex-start;
+      align-items: center;
+  }
+
+  @keyframes bgchange{
+    0%{
+        background-position: 0 50%;
+    }50%{
+        background-position: 100% 50%;
+    }100%{
+        background-position: 0 50%;
+    }
+  }
+  
+  .hoverable-logout:hover{
+    cursor: pointer;
+    color: #4B778D;
+    color: black;
+  }
+
+  .social-links i:hover{
+    cursor: pointer;
+    color: #C2FFD9;
+  }
+
+  main{
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 8px 8px 8px 8px;
+    margin-top: 60px;
+}
+
+.little-nav{
+  width: 80%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 8px 8px 0 0;
+  margin-top: 60px;
+}
+
+.little-nav h4{
+  color: var(--clr-primary-400);
+  font-size: 24px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  }
+  
+  #web-site-name{
+      padding-left:20px;
+  }
+
+  .nav-buttons{
+    justify-self:flex-end;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    margin-left: auto;
+  }
+  
+  .nav-buttons i{
+    font-size:50px; 
+    padding-right:50px;
+    color: var(--clr-primary-400)
+  }
+
+  .nav-buttons h3{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+
+  .reglogheader{
+    padding-right:30px;
+    font-size: 24px;
+    color:var(--clr-primary-400);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin:10px 0;
+  }
+
+  .reglogheader:hover{
+    color: black;
+    cursor: pointer;
+  }
+
+  footer{
+    margin-top: auto;
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color: black;
+    color: white;
+    padding-top:10px;
+    width:100%;
+}
+
+.social-links{
+  display: flex;
+  width: 50%;
+  justify-content:center;
+  align-items:center;
+  font-size: 50px;
+}
+
+.social-links i{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+#web-site-name:hover{
+  cursor: pointer;
+}
+
+.social-links i:hover{
+  cursor: pointer;
+}
+
+.nav-buttons i:hover{
+  cursor: pointer;
+}
+
+.nav-buttons h3{
+  position: relative;
+}
+
+.tooltip{
+    position: absolute;
+    top:80px;
+    background-color: white;
+    color: black;
+    display: none;
+    border-radius: 8px;
+    padding:5px;
+    left: -15px; 
+    width: max-content; 
+}
+
+#sticky{
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  align-self: flex-end;
+  margin-left: auto;
+  padding: 10px;
+}
+
+#sticky i{
+  color: var(--clr-neutral-100);
+  font-size: 64px;
+}
+
+#sticky i:hover{
+  color: var(--clr-primary-400);
+  cursor: pointer;
+}
+
+.task-list-bg{
+  width: 400px;
+  background-color: var(--pomo-primary-200);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.task-list-bg h3{
+  font-size: 32px;
+  color: white;
+  padding-top: 6px;
+  margin: 10px 0;
+  margin-top: 3px;
+}
+
+.task-list-fg{
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.task-list-fg::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+.task-list-fg::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.task-list-fg::-webkit-scrollbar-thumb {
+  background: var(--clr-neutral-100); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.task-list-fg::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-primary-200); 
+}
+
+.task-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.list-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-neutral-100);
+  padding:12px;
+  border-radius: 12px;
+  width: 350px;
+  margin: 5px 0;
+}
+
+.list-item p{
+  margin: 4px 0;
+  overflow:hidden;
+}
+
+.list-item i{
+  font-size:32px;
+}
+
+.list-item i:hover{
+  cursor: pointer;
+}
+
+#add-new-li-btn{
+  color: #f76073;
+  font-size: 36px;
+}
+
+#add-new-li-btn:hover{
+  cursor: pointer;
+  color: var(--clr-primary-400);
+}
+
+#new-li-input{
+  background-color: #f76073;
+  color: var(--clr-neutral-100);
+  padding:8px;
+  border-radius: 8px;
+  flex-grow: 1;
+  margin-right: 10px;
+  outline: none;
+  border:none;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.pomo-commands{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.pomo-commands button{
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+  font-size: 24px;
+  padding:6px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 440px;
+  margin: 10px 0px;
+}
+
+.pomo-commands button:hover{
+  cursor: pointer;
+  background-color: #7D1935;
+  font-size: 24px;
+  transition: 500ms;
+}
+
+
+.pomo-timer-holder{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--pomo-neutral-100);
+  border-radius: 12px;
+}
+
+.pomo-slogan{
+  font-size: 48px;
+}
+
+.pomo-image{
+  width: 400px;
+  border-radius: 50%;
+}
+
+.pomo-image-active{
+  width: 400px;
+  border-radius: 50%;
+  animation-name: example;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+}
+
+@keyframes example {
+  0%   {transform: rotate(0deg);}
+  20%  {transform: rotate(30deg);}
+  40%  {transform: rotate(15deg);}
+  60%  {transform: rotate(-15deg);}
+  80%  {transform: rotate(-30deg);}
+  100% {transform: rotate(0deg);}
+}
+
+#countdown{
+  font-size: 48px;
+  margin-top: 0px;
+  padding: 10px;
+  background-color: black;
+  color: var(--pomo-neutral-100);
+  border-radius: 6px;
+}
+
+.intructions{
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.intructions img{
+  width: 87%;
+  justify-self: flex-end;
+  margin-top: auto;
+  border-radius: 12px;
+}
+
+.intructions h3{
+  font-size: 48px;
+  color: white;
+  margin: 12px 0;
+}
+
+.instruct-container{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: auto;
+}
+
+.instruct-spec-holder{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.instruct-spec-holder h2{
+  background-color: var(--clr-primary-400);
+  color: var(--clr-primary-200);
+  padding: 6px 15px;
+  border-radius: 50%;
+  font-size: 32px;
+}
+
+.instruct-spec-holder p{
+  padding: 10px;
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-900);
+  border-radius: 8px;
+  min-height: 126px;
+}
+
+@media (min-width:1010px) and (max-width:1250px){ 
+  main{
+    width: 1000px;
+  }
+
+  .instruct-spec-holder{
+    width: 30%;
+  }
+
+  .intructions{
+    min-height: unset;
+  }
+}
+
+
+@media (min-width:650px) and (max-width:1010px){ 
+  main{
+    width: 80%;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .options{
+    justify-content: center;
+    align-items: center;
+    width: 440px;
+    margin-top: 60px;
+  }
+
+  .pomo-timer-holder{
+    width: 440px;
+  }
+
+  .intructions{
+    min-height: unset;
+  }
+
+  .instruct-container{
+    margin-top: 40px;
+  }
+
+  .instruct-spec-holder{
+    width: 30%;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .instruct-spec-holder h2{
+    margin: 6px 0;
+  }
+
+  .instruct-spec-holder p{
+    justify-self: flex-end;
+    margin-top: auto;
+    min-height: 150px;
+  }
+
+  .intructions img{
+    width: 96%;
+  }
+
+}
+
+@media (max-width:640px){ 
+  main{
+    width: 80%;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .nav-buttons i{
+    font-size: 32px;
+    padding-right: 20px;
+  }
+
+  .reglogheader{
+    font-size: 18px;
+    padding-left: 5px;
+    padding-right: 4px;
+  }
+
+  #sticky{
+    position: absolute;
+    bottom:unset;
+    top: 80px;
+  }
+
+  #web-site-name img{
+    width: 150px;
+  }
+
+  .options{
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin-top: 60px;
+  }
+
+  .task-list-bg{
+    width: 280px;
+    padding: 10px;
+  }
+
+  .task-list-fg{
+    width: 300px;
+  }
+
+  #firstli{
+    width: 250px;
+    padding-left: 12px;
+    justify-content: flex-start;
+  }
+
+  #add-new-li-btn{
+    font-size: 28px;
+    margin-left: 20px;
+  }
+
+  .list-item{
+    width: 250px;
+    padding-left: 12px;
+  }
+
+  .list-item i{
+    justify-self: flex-end;
+    margin-left: auto;
+  }
+
+  #new-li-input{
+    font-size: 16px;
+    width: 200px;
+    padding-left: 10px;
+    flex-grow: unset;
+  }
+
+  .pomo-timer-holder{
+    width: 310px;
+  }
+
+  .pomo-commands button{
+    width: 300px;
+  }
+
+  .intructions{
+    min-height: unset;
+  }
+
+  .instruct-container{
+    margin-top: 40px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .instruct-spec-holder{
+    width: 80%;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .instruct-spec-holder h2{
+    margin: 6px 0;
+  }
+
+  .instruct-spec-holder p{
+    justify-self: flex-end;
+    margin-top: auto;
+  }
+
+  .intructions img{
+    width: 96%;
+  }
+
+}

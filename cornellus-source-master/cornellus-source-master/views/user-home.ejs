@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/user-home.css">
+  <link rel="stylesheet" href="css/footstyle.css">
+  <title>Cornellus</title>
+  <link rel="icon" href="/icon/favicon.ico">
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <h1 id="web-site-name"><img src="images/cornellusv1.png" width="200px" alt="" onclick="window.location.href='/';">
+      </h1>
+      <div class="My-Notes">MY NOTES</div>
+      <div class="nav-buttons">
+        <h3><i class="fas fa-tools hoverable-logout" onclick="window.location.href='/gadgets';" data-tooltip="Gadgets"></i> <p class="tooltip">Gadgets</p></h3>
+        <h3><i class="fas fa-door-open hoverable-logout" onclick="window.location.href='/logout';" data-tooltip="Log out"></i> <p class="tooltip">Log out</p></h3>
+      </div>
+    </nav>
+    <main>
+      <div class="search-filter-container">
+
+        <div class="search">
+          <label class="labelforsearch" for=""><i class="fa fa-search">&nbsp;</i></label>
+          <input id="searchedTitle" type="text" onchange="searchByTit(event)" class="searchTerm"
+            placeholder="Search by note title or keyword...">
+        </div>
+      </div>
+
+      <div class="content-container">
+        <% usersposts.forEach(function(post){ %>
+          <div class="blog-sample" data-tooltip="<%= post.summary %>">
+            <div class="title-subject">
+              <h1 class="blog-sample-title">
+                <%= post.title %>
+              </h1>
+            </div>
+            <div class="blog-sample-kws">
+              <% var kwsraw=post.keywords %>
+                <% var kwarr=kwsraw.split('*') %>
+                  <% kwarr.forEach(function(kw){ %>
+                    <% if(kw!=""){ %>
+                    <p class="keyy">
+                      <%= kw%>
+                    </p>
+                    <% } %>
+                    <% }) %>
+            </div>
+            <div class="post-summary">
+              <%= post.summary %>
+            </div>
+            <div class="post-actions">
+              <button class="read-note-btn" onclick="window.location.href='/notes/<%= post._id %>';"><i
+                  class="fas fa-book-open"></i></button>
+              <button class="edit-note-btn" onclick="window.location.href='/editnote/<%= post._id %>';"><i
+                  class="fas fa-edit"></i></button>
+              <button class="delete-note-btn"><i class="fas fa-trash"
+                  onclick="window.location.href='/deletenote/<%= post._id %>';"></i></button>
+            </div>
+          </div>
+          <%});%>
+          <div class="new-button-holder">
+            <button type="button" class="add-new-note-btn" name="button" onclick="window.location.href='/compose';">
+              <p class="plussymbolfornew"><i class="fas fa-plus"></i></p>
+            </button>
+          </div>
+
+      </div>
+    </main>
+    <div id="sticky">
+      <h3 onclick="window.location.href='/about';"><i class="far fa-question-circle"></i></h3>
+    </div>
+    <footer>
+      <div class="social-links">
+        <a class="emailtag" href = "mailto: bugra.gundogan@hotmail.com"><i class="fas fa-envelope-square"></i></a>
+      </div>
+      <p class="copy-right-shit">Copyright &copy; 2021 Buğra Gündoğan</p>
+    </footer>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    var navbuttons = document.getElementsByClassName("hoverable-logout");
+
+    for (let index = 0; index < navbuttons.length; index++) {
+      const element = navbuttons[index];
+      element.addEventListener('mouseenter', e => {
+        element.parentElement.lastElementChild.style.display = "block";
+      });
+      element.addEventListener('mouseleave', e =>{
+        element.parentElement.lastElementChild.style.display = "none";
+      })
+    }
+
+    var blogsamples = document.getElementsByClassName("blog-sample");
+    var titles = document.getElementsByClassName("blog-sample-title");
+    var blogdicts = []
+    for (var i = 0; i < blogsamples.length; i++) {
+      var blog = blogsamples[i];
+      var tit = blog.children[0].children[0].innerText.toLowerCase();
+      var kwsOfNote = blogsamples[i].children[1].children;
+      var kwler = [];
+      for (let index = 0; index < kwsOfNote.length; index++) {
+        const element = kwsOfNote[index];
+        kwler.push(element.innerText.toLowerCase());
+      }
+      var kwPureText = "," + kwler.toString() + ",";
+      blogdicts.push({
+        title: tit,
+        keyword: kwPureText,
+        value: blog
+      });
+    }
+
+    function searchByTit(e) {
+      var wantedTitleorKW = document.getElementById("searchedTitle").value.toLowerCase();
+      if (wantedTitleorKW === "") {
+        for (let index = 0; index < blogdicts.length; index++) {
+          const element = blogdicts[index];
+          element.value.style.display = "flex";
+        }
+        return;
+      }
+
+      for(let index = 0; index < blogdicts.length; index++){
+        const element = blogdicts[index];
+        if(element.title.includes(wantedTitleorKW)){
+          element.value.style.display="flex";
+        }else if(element.keyword.includes("," + wantedTitleorKW + ",")){
+          element.value.style.display="flex";
+        }else{
+          element.value.style.display ="none";
+        }
+      }
+
+      /*
+
+      for (let index = 0; index < dict.length; index++) {
+        const element = dict[index];
+        if (element.key.includes(wantedTitle)) {
+          element.value.style.display = "flex";
+        } else {
+          element.value.style.display = "none";
+        }
+      }
+      
+      var wantedKW = document.getElementById("searchedTitle").value.toLowerCase();
+
+      if (wantedKW === "") {
+        for (let index = 0; index < blogdicts.length; index++) {
+          const element = blogdicts[index];
+          element.value.style.display = "flex";
+        }
+        return;
+      }
+
+      for (let index = 0; index < blogdicts.length; index++) {
+        const element = blogdicts[index];
+        if (element.key.includes("," + wantedKW + ",")) {
+          element.value.style.display = "flex";
+        } else {
+          element.value.style.display = "none";
+        }
+      }*/
+    }
+  </script>
+</body>
+
+</html>

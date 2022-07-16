@@ -1,0 +1,343 @@
+:root {
+    --clr-primary-200: #f3eed9;
+    --clr-primary-400: #F8485E;
+
+    --clr-neutral-100: #fff;
+    --clr-neutral-900: #222c2a;
+
+    --ff-primary: "Roboto", sans-serif;
+    --ff-accent: "Playfair Display", serif;
+
+    --keywordsbg: #7E8A97;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(-45deg, #512D6D, #F8485E, #628395, #0A1931); /*#F8485E */
+    background-size: 400% 400%;
+    animation: bgchange 10s ease-in-out infinite;
+    margin:0;
+    padding:0;
+}
+
+
+@keyframes bgchange{
+    0%{
+        background-position: 0 50%;
+    }50%{
+        background-position: 100% 50%;
+    }100%{
+        background-position: 0 50%;
+    }
+}
+  
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.header-option {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    color: var(--clr-primary-400)
+}
+
+.header-option:hover{
+    cursor: pointer;
+    color: var(--clr-neutral-900);
+}
+
+
+#web-site-name {
+    justify-self: flex-start;
+    margin-right: auto;
+    width: 200px;
+}
+
+#web-site-name:hover{cursor: pointer;}
+
+
+#web-site-name img {
+    justify-self: flex-start;
+    margin-right: auto;
+    width: 200px;
+}
+
+.l-r-container{
+    justify-self: center;
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-left: 10px;
+    padding-right: 5px;
+    border-radius: 5px;
+    background-color: white;
+}
+h1,h2,h3,h4,h5,h6,p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input[type=text] {
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 16px;
+    height: 2rem;
+    width: 200px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border-radius: 3px;
+}
+
+input[type=email] {
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 16px;
+    height: 2rem;
+    width: 200px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border-radius: 3px;
+}
+
+
+input[type=password] {
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 16px;
+    height: 2rem;
+    width: 200px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border-radius: 3px;
+}
+
+button[type=submit] {
+    padding: 7px;
+    font-size: 18px;
+    margin-top: 30px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px 5px var(#394048);
+    color: white;
+    background-color: dodgerblue;
+    border:none;
+}
+
+.login-register-h2{
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.hoverable-l-r-btn:hover{
+    cursor: pointer;
+}
+
+.hoverable-f-r-btn:hover{
+    cursor: pointer;
+}
+
+.invalid{
+    outline: 2px solid #FF4848 !important;
+    outline-offset: 2px;
+    outline-style: ridge;
+}
+
+.to-register-login{
+    font-size: 18px;
+}
+
+.to-register-login a:link{
+    color:var(--clr-primary-400);
+}
+
+#form-invalid-messages{
+    list-style-type: none;
+    color: #8D2828;
+    font-weight: bold;
+}
+#form-invalid-messages li{
+    background-color: white;
+    padding:4px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.input-icons i {
+    position: absolute;
+    margin-top: 3px;
+    margin-bottom: 7px;
+}
+
+.input-icons {
+    width: 100%;
+    text-align: center;
+}
+
+.icon {
+    padding: 10px;
+    padding-left: 5px;
+    min-width: 40px;
+    color: #1e90ff;
+}
+
+.iconr {
+    padding: 10px;
+    padding-left: 5px;
+    min-width: 40px;
+    color: orange;
+}
+
+
+.errors-of-login{
+    color: #8D2828;
+    font-weight: bold;
+}
+
+.errors-of-login p{
+    background-color: white;
+    padding:6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.footer {
+    justify-self: flex-end;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    min-height: 100px;
+    background-color: var(--clr-neutral-900);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links i {
+    color: var(--clr-neutral-100);
+    font-size: 40px;
+    padding: 0 10px;
+}
+
+.social-links i:hover{
+    cursor: pointer;
+    color: var(--clr-primary-400);
+}
+
+.footer p {
+    margin-top: 12px;
+    color: var(--clr-neutral-100);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media (max-width:650px){
+    header{
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .header-option{
+        font-size: 14px;
+    }
+
+    #web-site-name{
+        width: 140px;
+    }
+    #web-site-name img{
+        width: 140px;
+    }
+    
+    .l-r-container {
+        width: 95%;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-align: center;
+        height: unset;
+        margin-top: 60px;
+    }
+    h2{
+        font-size: 16px;
+    }
+    .login-form{
+        width: 310px;
+        margin-top: 0px;
+        padding-top: 5px;
+    }
+    .register-form{
+        width: 310px;
+        margin-top: 0px;
+        padding-top: 5px;
+    }
+    hr{
+        width: 90%;
+        display: none;
+    }
+    header{
+        width: 100%;
+        margin-top: 0px;
+    }
+}

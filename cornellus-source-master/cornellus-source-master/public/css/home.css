@@ -1,0 +1,330 @@
+:root {
+    --clr-primary-200: #f3eed9;
+    --clr-primary-400: #F8485E;
+}
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: linear-gradient(-45deg, #512D6D, #F8485E, #628395, #0A1931);
+    background-size: 400% 400%;
+    animation: bgchange 10s ease-in-out infinite;
+}
+
+.hoverable-home-btn:hover{
+    cursor: pointer;
+}
+
+@keyframes bgchange{
+    0%{
+        background-position: 0 50%;
+    }50%{
+        background-position: 100% 50%;
+    }100%{
+        background-position: 0 50%;
+    }
+}
+
+.lil-navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px 30px 0px;
+}
+
+.lil-navbar h3{
+    color: var(--clr-primary-400);
+    text-align: center;
+}
+
+.lil-navbar h3:hover{
+    color: black;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.second-container{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 40px;
+    margin-top: 90px;
+    padding:20px;
+    padding-bottom: 0px;
+    background-color:white;
+}
+
+#long-banner{
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.main-content {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color:white;
+
+}
+
+.logo-signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color:white;
+    padding:20px;
+}
+
+#logo {
+    width: 240px;
+}
+
+.login-register {
+    margin-top: 30px;
+}
+
+.login-register h3 {
+    margin-top: 10px;
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    color: white;
+    background-color: #ed5164;
+}
+
+.login-register i{
+    font-size: 1.5rem;
+}
+
+.cornellus-about{
+    color: #F8485E;
+}
+
+.cornellus-about:hover{
+    cursor: pointer;
+    color: #222c2a;
+}
+
+footer {
+    justify-self: flex-end;
+    margin-top: auto;
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+footer p{
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.social-links i {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+}
+
+.social-links i:hover {
+    cursor: pointer;
+    color: black;
+}
+
+
+.specs-explanation {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 40px;
+    box-shadow: -5px 0 0 -2px #0A1931;
+    padding: 20px;
+    padding-bottom: 30px;
+}
+
+.specs-explanation h4 {
+    font-size: 1.7rem;
+}
+
+.spec {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.spec h4 {
+    font-size: 1.7rem;
+}
+
+@media (min-width:1000px) and (max-width:1200px){
+    .specs-explanation{
+        margin-left: 10px;
+    }
+    #logo{
+        width: 180px;
+    }
+
+    .login-register i{
+        font-size: 1.3rem;
+    }
+
+    .login-register h3{
+        font-size: 1.1rem;
+    }
+}
+
+
+@media (min-width: 651px) and (max-width:999px){
+    .main-content{
+        flex-direction: column;
+    }
+    .specs-explanation{
+        margin-left: 0px;
+        box-shadow: none;
+    }
+    .logo-signup {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        background-color:white;
+        padding:20px;
+    }
+    .login-register{
+        margin-top: 0px;
+        margin-left: 55px;
+    }
+    
+    .second-container{
+        width: 85%;
+    }
+}
+
+@media (min-width:426px) and (max-width:650px){
+    .main-content{
+        flex-direction: column;
+    }
+    .specs-explanation{
+        margin-left: 0px;
+        box-shadow: none;
+    }
+    .logo-signup {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color:white;
+        padding:20px;
+    }
+    .login-register{
+        margin-top: 5px;
+        margin-left: 0px;
+    }
+    
+    .second-container{
+        width: 85%;
+        margin-top:20px;
+    }
+
+    .container{
+        height: auto;
+    }
+
+    footer{
+        margin-top:20px;
+    }
+
+    .lil-navbar{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .lil-navbar h3{
+        width: 220px;
+        padding: 5px;
+        background-color: var(--clr-primary-400);
+        color: white;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+}
+
+@media(max-width:425px){
+    .main-content{
+        flex-direction: column;
+    }
+    .specs-explanation{
+        margin-left: 0px;
+        box-shadow: none;
+    }
+    .logo-signup {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color:white;
+        padding:20px;
+    }
+    .login-register{
+        margin-top: 5px;
+        margin-left: 0px;
+    }
+    
+    .second-container{
+        width: 95%;
+        margin-top:20px;
+        overflow: hidden;
+    }
+
+    .container{
+        height: auto;
+    }
+
+    #long-banner{
+        width:200vw;
+    }
+
+    footer{
+        margin-top:20px;
+    }
+
+    .lil-navbar{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .lil-navbar h3{
+        width: 220px;
+        padding: 5px;
+        background-color: var(--clr-primary-400);
+        color: white;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+}

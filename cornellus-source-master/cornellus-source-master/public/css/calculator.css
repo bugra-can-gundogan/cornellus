@@ -1,0 +1,400 @@
+:root {
+    --clr-primary-200: #f3eed9;
+    --clr-primary-400: #F8485E;
+  
+    --clr-neutral-100: #fff;
+    --clr-neutral-900: #222c2a;
+  
+    --ff-primary: "Roboto", sans-serif;
+    --ff-accent: "Playfair Display", serif;
+  
+    --keywordsbg: #8D2D54;
+  }
+  
+  html{
+      min-height: 1000px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  body{
+    background: linear-gradient(-45deg, #512D6D, #F8485E, #628395, #0A1931); /*#F8485E */
+    background-size: 400% 400%;
+    animation: bgchange 10s ease-in-out infinite;
+    margin:0;
+    padding:0;  
+  }
+  
+  @keyframes bgchange{
+    0%{
+        background-position: 0 50%;
+    }50%{
+        background-position: 100% 50%;
+    }100%{
+        background-position: 0 50%;
+    }
+  }
+  
+  .container{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 100vh;
+      justify-content: flex-start;
+      align-items: center;
+  }
+  
+  .hoverable-logout:hover{
+    cursor: pointer;
+    color: #4B778D;
+    color: black;
+  }
+
+  .social-links i:hover{
+    cursor: pointer;
+    color: #C2FFD9;
+  }
+
+  main{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+    margin-top: 100px;
+    min-height: 800px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  }
+  
+  #web-site-name{
+      padding-left:20px;
+  }
+
+  .nav-buttons{
+    justify-self:flex-end;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    margin-left: auto;
+  }
+  
+  .nav-buttons i{
+    font-size:50px; 
+    padding-right:50px;
+    color: var(--clr-primary-400)
+  }
+
+  .nav-buttons h3{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+
+  .reglogheader{
+    padding-right:30px;
+    font-size: 24px;
+    color:var(--clr-primary-400);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin:10px 0;
+  }
+
+  .reglogheader:hover{
+    color: black;
+    cursor: pointer;
+  }
+
+
+  footer{
+    margin-top: auto;
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color: black;
+    color: white;
+    padding-top:10px;
+    width:100%;
+}
+
+.social-links{
+  display: flex;
+  width: 50%;
+  justify-content:center;
+  align-items:center;
+  font-size: 50px;
+}
+
+.social-links i{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+#web-site-name:hover{
+  cursor: pointer;
+}
+
+.social-links i:hover{
+  cursor: pointer;
+}
+
+.nav-buttons i:hover{
+  cursor: pointer;
+}
+
+.nav-buttons h3{
+  position: relative;
+}
+
+.tooltip{
+    position: absolute;
+    top:80px;
+    background-color: white;
+    color: black;
+    display: none;
+    border-radius: 8px;
+    padding:5px;
+    left: -15px; 
+    width: max-content; 
+}
+
+
+.calculator{
+    background-origin: padding-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    z-index: 3;
+}
+
+.calc-container{
+    background-color: #1d1d1d;
+    height: auto;
+    border-radius: 30px 30px 30px 30px;
+}
+
+
+.output{
+    width: 100%;
+}   
+
+.scientific-holder{
+    position: relative;
+    color: white;
+    font-weight: bold;
+    overflow: hidden;
+    height: 55px;
+    font-size: 1.9em;
+}
+
+.scientific-text{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.operation{
+    height: 70px;
+
+    color: #878787;
+
+    font-size: 1.9em;
+    font-weight: bold;
+
+    position: relative;
+    overflow: hidden;
+}
+.operation .value{
+    position: absolute;
+
+    bottom: 5px;
+    right : 10px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.result{
+    height: 140px;
+
+    color: #FFF;
+
+    font-size: 2.6em;
+    font-weight: bold;
+    
+    overflow: hidden;
+    position: relative;
+}
+
+.result .value{
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+    right : 10px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.input{
+    background-color: black;
+
+    border-radius: 0 0 25px 25px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.row button{
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    margin : 8px;
+    cursor: pointer;
+    color: #424642;
+    color: white;
+}
+
+.row button:hover{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.row #calculate{
+    color: #FFF;
+    background-color: #46e0bc;
+    width : 121px;
+    border-radius: 50px;
+}
+.row #delete{
+    color: #FFF;
+    background-color: #e05046;
+}
+
+.row #empty{
+    display:none;
+}
+
+.row #copy{
+    width: 300px;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 50px;
+    background-color: #34b2d1;
+    color: white;
+}
+
+#copy:hover{
+    font-size: 1.2em;
+    background-color: #52a6ba;
+    transition: ease-in-out 500ms;
+}
+
+#division, #multiplication, #subtraction, #addition {
+    color: #18b893;
+    color: #46e0bc;
+}
+
+.input button span{
+    font-size: 0.6em;
+    position: absolute;
+}
+
+.active-angle{
+    background-color: #1d1d1d !important;
+    color: #FFF !important;
+    border-radius: 10px !important;
+}
+
+
+@media screen and (min-width: 550px) and (max-width:649px){
+
+    #web-site-name img{
+        width: 150px;
+    }
+
+    .row button{
+        height: 30px;
+        width: 30px;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width:549px){
+
+    #web-site-name img{
+        width: 120px;
+    }
+
+    #web-site-name{
+        padding-left: 5px;
+        margin: 5px 0;
+    }
+
+    .scientific-text{
+        font-size: 0.8em;
+    }
+
+    .row button{
+        height: 40px;
+        width: 40px;
+        font-size: 1.2em;
+    }
+    
+    #copy{
+        font-size: 0.8em !important;
+    }
+
+    main{
+        align-items: flex-start;
+    }
+
+    .calc-container{
+        margin-top: 10px;
+        width: 310px;
+    }
+
+    .scientific-holder{
+        height: 55px;
+    }
+
+    .operation{
+        height: 40px;
+    }
+
+    .result{
+        height: 60px;
+    }
+
+    .nav-buttons h3{
+        font-size: 16px;
+        padding-right: 9px;
+    }
+
+    main{
+        margin-top: 10px;
+        min-height: 600px;
+    }
+    
+}

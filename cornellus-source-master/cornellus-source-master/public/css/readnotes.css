@@ -1,0 +1,243 @@
+:root {
+    --clr-primary-200: #f3eed9;
+    --clr-primary-400: #F8485E;
+
+    --clr-neutral-100: #fff;
+    --clr-neutral-900: #222c2a;
+
+    --ff-primary: "Roboto", sans-serif;
+    --ff-accent: "Playfair Display", serif;
+
+    --keywordsbg: #7E8A97;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.header-option {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    color: var(--clr-primary-400)
+}
+
+.header-option:hover{
+    cursor: pointer;
+    color: var(--clr-neutral-900);
+}
+
+
+#web-site-name {
+    justify-self: flex-start;
+    margin-right: auto;
+    width: 200px;
+}
+
+#web-site-name:hover{cursor: pointer;}
+
+
+#web-site-name img {
+    justify-self: flex-start;
+    margin-right: auto;
+    width: 200px;
+}
+
+.noteContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.main-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+    min-height: 600px;
+    margin-top: 60px;
+    justify-self: center;
+    -webkit-box-shadow: 0px 0px 15px 5px #000000; 
+    box-shadow: 0px 0px 15px 5px #000000;
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.post-titus{
+    font-size: 2rem;
+}
+
+.post-body{
+    margin-top: 20px;
+}
+
+.summary{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.summary p{
+    margin-top: 10px;
+}
+
+.keywords{
+    justify-self: flex-end;
+    margin-left: auto;
+    background-color: var(--keywordsbg);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.keywords p{
+    background-color: white;
+    border-radius: 5px;
+    padding:10px;
+    margin: 10px;
+}
+
+.author-sect{
+    height: 100px;
+    width: 60%;
+    border-radius: 10px;
+    min-height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding:10px;
+    padding-right: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-primary-400);
+}
+
+
+.footer {
+    justify-self: flex-end;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    min-height: 100px;
+    background-color: var(--clr-neutral-900);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links i {
+    color: var(--clr-neutral-100);
+    font-size: 40px;
+    padding: 0 10px;
+}
+
+.social-links i:hover{
+    cursor: pointer;
+    color: var(--clr-primary-400);
+}
+
+.footer p {
+    margin-top: 12px;
+    color: var(--clr-neutral-100);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+@media only screen and (min-width: 801px) and (max-width:1400px) {
+    .noteContainer{
+        width: 75%;
+    }
+
+    .author-sect{
+        width: 75%;
+    }
+}
+
+
+
+@media only screen and (min-width: 501px) and (max-width:800px) {
+    .noteContainer{
+        width: 85%;
+    }
+
+    .author-sect{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .noteContainer{
+        width: 95%;
+    }
+
+    .author-sect{
+        width: 95%;
+    }
+
+    header{
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .header-option{
+        font-size: 14px;
+    }
+
+    #web-site-name{
+        width: 140px;
+    }
+    #web-site-name img{
+        width: 140px;
+    }
+
+    .keywords p{
+        margin:5px;
+        padding: 5px;
+    }
+}
